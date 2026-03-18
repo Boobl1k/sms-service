@@ -30,6 +30,20 @@ implementation("com.icerockdev.service:sms-service:1.2.0")
     
 ````
 
+### Sms4b V2
+````kotlin
+    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    private val smsService = SmsService(
+        scope,
+        Sms4bV2Driver(
+            Sms4bV2Config(
+                token = "<token>",
+                sender = "<sender>",
+            )
+        )
+    )
+````
+
 ### Sms4b
 ````kotlin
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
